@@ -19,3 +19,6 @@ def choose_marker():
         return ('X', 'O')
     else:
         return ('O', 'X')
+
+def place_marker(board, marker, position):
+    board[position] = marker
