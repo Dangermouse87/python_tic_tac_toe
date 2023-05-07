@@ -38,3 +38,6 @@ def first_player():
         return 'Player 2'
     else:
         return 'Player 1'
+
+def open_space(board, position):
+    return board[position] == ' '
