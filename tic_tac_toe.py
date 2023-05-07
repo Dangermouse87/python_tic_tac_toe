@@ -1,4 +1,4 @@
-
+import random
 
 def display_board(board):
     print('\n')
@@ -32,3 +32,9 @@ def win_check(board,mark):
     (board[9] == mark and board[6] == mark and board[3] == mark) or # down the right side
     (board[7] == mark and board[5] == mark and board[3] == mark) or # diagonal
     (board[9] == mark and board[5] == mark and board[1] == mark)) # diagonal
+
+def first_player():
+    if random.randint(0, 1) == 0:
+        return 'Player 2'
+    else:
+        return 'Player 1'
