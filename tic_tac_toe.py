@@ -58,10 +58,7 @@ def player_choice(board):
     return position
 
 def replay():
-    input('Do you want to play again? Enter "y" or "n": ').lower().startswith('y')
-
-def play_game():
-    input('Are you ready to play? Enter "y" or "n": ').lower().startswith('y')
+    return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
 
 def sleep():
     print('.')
@@ -75,13 +72,10 @@ def sleep():
     print('\n')
 
 print('Welcome to Tic Tac Toe!')
-print('\n')
 
 while True:
     # Reset the board
     game_board = [' '] * 10
-    
-    play_game()
     print('\n')
     player1, player2 = choose_marker()
     print('\n')
@@ -90,7 +84,10 @@ while True:
     turn = first_player()
     
     print(turn + ' will go first.')
-    if play_game:
+
+    play_game = input('Are you ready to play? Enter Yes or No.')
+    
+    if play_game.lower()[0] == 'y':
         playing = True
     else:
         playing = False
@@ -113,7 +110,7 @@ while True:
                     display_board(game_board)
                     print('The game is a draw!')
                     print('\n')
-                    break
+                    playing = False
                 else:
                     turn = 'Player 2'
 
@@ -133,7 +130,7 @@ while True:
                     display_board(game_board)
                     print('The game is a draw!')
                     print('\n')
-                    break
+                    playing = False
                 else:
                     turn = 'Player 1'
                     
