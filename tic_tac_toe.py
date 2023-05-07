@@ -41,3 +41,9 @@ def first_player():
 
 def open_space(board, position):
     return board[position] == ' '
+
+def full_board_check(board):
+    for position in range(1,10):
+        if open_space(board, position):
+            return False
+    return True
