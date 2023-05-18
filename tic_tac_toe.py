@@ -73,6 +73,9 @@ def sleep():
 
 print('Welcome to Tic Tac Toe!')
 
+player1_score = 0
+player2_score = 0
+
 while True:
     # Reset the board
     game_board = [' '] * 10
@@ -95,7 +98,6 @@ while True:
     while playing:
         if turn == 'Player 1':
             # Player1's turn.
-            
             display_board(game_board)
             position = player_choice(game_board)
             place_marker(game_board, player1, position)
@@ -103,12 +105,15 @@ while True:
             if win_check(game_board, player1):
                 display_board(game_board)
                 print(f'Congratulations! {turn} won the game!')
+                player1_score += 1
+                print(f'The current score is Player 1 {player1_score} : {player2_score} Player 2')
                 print('\n')
                 playing = False
             else:
                 if full_board_check(game_board):
                     display_board(game_board)
                     print('The game is a draw!')
+                    print(f'The current score is Player 1 {player1_score} : {player2_score} Player 2')
                     print('\n')
                     playing = False
                 else:
@@ -123,12 +128,15 @@ while True:
             if win_check(game_board, player2):
                 display_board(game_board)
                 print(f'Congratulations! {turn} has won the game!')
+                player2_score += 1
+                print(f'The current score is Player 1 {player1_score} : {player2_score} Player 2')
                 print('\n')
                 playing = False
             else:
                 if full_board_check(game_board):
                     display_board(game_board)
                     print('The game is a draw!')
+                    print(f'The current score is Player 1 {player1_score} : {player2_score} Player 2')
                     print('\n')
                     playing = False
                 else:
